@@ -49,12 +49,12 @@ class App extends Component {
     cityChangeHandler = (e) => {
         e.preventDefault();
         var cityName = e.target.value;
-        // console.log(cityName);
+        var x = document.getElementById("searchbox");
+        x.value = "";
 
         if (cityName !== this.state.cityName) {
 
             if (this.state.bankRecords[cityName].length === 0) {
-                // console.log("reload bank records and city !");
                 var city = cityName.toUpperCase();
                 axios
                     .get(`https://bankbranchfinder.herokuapp.com/api/branches?q=${city}&limit=5000&offset=0`)
@@ -65,7 +65,8 @@ class App extends Component {
                         this.setState({
                             ...this.state,
                             bankRecords : temp,
-                            cityName : cityName
+                            cityName : cityName,
+                            currentPage : 1
                         })
                     })
                     .catch((err) => {
@@ -73,14 +74,14 @@ class App extends Component {
                     });
             }
             else {
-                // console.log("reload city !");
                 var temp = this.state.bankRecords;
                 var temp2 = temp[cityName];
                 temp["Records"] = temp2;
                 this.setState({
                     ...this.state,
                     cityName : cityName,
-                    bankRecords : temp
+                    bankRecords : temp,
+                    currentPage : 1
                 });
             }
         }
@@ -110,7 +111,8 @@ class App extends Component {
         temp.Records = results;
         this.setState({
             ...this.state,
-            bankRecords : temp
+            bankRecords : temp,
+            currentPage : 1
         })
     }
 
@@ -146,7 +148,8 @@ class App extends Component {
         var perPage = e.target.value;
         this.setState({
             ...this.state,
-            perPage : parseInt(perPage)
+            perPage : parseInt(perPage),
+            currentPage : 1
         });
     }
 
@@ -247,7 +250,7 @@ class App extends Component {
                         </div>
                         <div className="dropdown">
                             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {this.state.perPage}
+                                Page size {this.state.perPage}
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <button className="dropdown-item" onClick={this.perPageHandler} value="20">20</button>
@@ -266,7 +269,7 @@ class App extends Component {
                     <div className="customBox2">
                         <div className="dropdown">
                             <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {this.state.currentPage}
+                                Page no. {this.state.currentPage}
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 {renderPageNumberButtons}
@@ -298,7 +301,7 @@ class App extends Component {
                     <div className="customBox2">
                         <div className="dropup">
                             <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {this.state.currentPage}
+                                Page no. {this.state.currentPage}
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 {renderPageNumberButtons}
@@ -312,7 +315,7 @@ class App extends Component {
                     
                     
                 </div>
-                <Modal show={this.state.openModalBool}>
+                <Modal show={this.state.openModalBool} onHide={() => this.closeModal()}>
                     <Modal.Header closeButton onClick={() => this.closeModal()}>
                         <Modal.Title>IFSC : {this.state.ifsc}</Modal.Title>
                     </Modal.Header>
