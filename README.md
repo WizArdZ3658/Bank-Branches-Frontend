@@ -5,7 +5,7 @@ This Front-End Web Application is part of a Full Stack Project.
 
 GitHub repo link for Back-End API Application : https://github.com/WizArdZ3658/Bank-Branches-Backend
 
-The website is deployed at Netlify, click [here](https://5ff87ba487cb0300c20072c8--confident-easley-02aacf.netlify.app/) to view.
+The website is deployed at Heroku, click [here](https://bankbranchesindia.herokuapp.com/) to view.
 
 ## Features
  * User is be able to search by text for the banks, across all the fields.
@@ -21,7 +21,7 @@ The website is deployed at Netlify, click [here](https://5ff87ba487cb0300c20072c
  * To get more details of the bank simply click on "Address", a modal will popup which will show all the remaining location details.
 
 ## Hosting
-The website is hosted for free on [Netlify](https://www.netlify.com/).
+The website is hosted for free on [Heroku](https://www.heroku.com/home).
 
 ## Technology Stack
 ##### Languages :-
