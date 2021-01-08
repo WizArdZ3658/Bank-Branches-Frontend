@@ -28,7 +28,7 @@ The website is hosted for free on [Heroku](https://www.heroku.com/home).
 HTML, CSS, Javascript, Git
 
 ##### Frameworks, Libraries and Tools:-
-React, Axios, ReactDOM, Webpack, Babel, Bootstrap, VSCode, JSON, [Bank Branch API](https://github.com/WizArdZ3658/Breaking-Bad)
+React, Axios, ReactDOM, Webpack, Babel, Heroku, Bootstrap, VSCode, JSON, [Bank Branch API](https://github.com/WizArdZ3658/Breaking-Bad)
 
 ##### Environment:-
 Windows(my PC)
