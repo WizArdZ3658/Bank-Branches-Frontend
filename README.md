@@ -1,10 +1,6 @@
 # Bank Branches Frontend
 A Front-End Web Application for searching information on banks in cities. This application fetches data from APIs, you can read more about the APIs [here](https://github.com/WizArdZ3658/Bank-Branches-Backend).
 
-This Front-End Web Application is part of a Full Stack Project.
-
-GitHub repo link for Back-End API Application : https://github.com/WizArdZ3658/Bank-Branches-Backend
-
 The website is deployed at Heroku, click [here](https://bankbranchesindia.herokuapp.com/) to view.
 
 ## Features
@@ -21,14 +17,14 @@ The website is deployed at Heroku, click [here](https://bankbranchesindia.heroku
  * To get more details of the bank simply click on "Address", a modal will popup which will show all the remaining location details.
 
 ## Hosting
-The website is hosted for free on [Heroku](https://www.heroku.com/home).
+The website is hosted on [Heroku](https://www.heroku.com/home).
 
 ## Technology Stack
 ##### Languages :-
 HTML, CSS, Javascript
 
 ##### Frameworks, Libraries and Tools:-
-React, Axios, ReactDOM, Webpack, Babel, Heroku, Bootstrap, VSCode, [Bank Branch API](https://github.com/WizArdZ3658/Breaking-Bad), Git
+React, Axios, Webpack, Babel, Heroku, Bootstrap, VSCode, [Bank Branch API](https://github.com/WizArdZ3658/Bank-Branches-Backend), Git
 
 ##### Environment:-
-Windows(my PC)
+Windows(my PC), Linux(Deployment server)
